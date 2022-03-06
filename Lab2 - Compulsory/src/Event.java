@@ -1,50 +1,62 @@
 public class Event {
 
+    private String name;
+    private Integer size;
+    private Integer start;
+    private Integer end;
 
-    private static String name;
-    private static Integer size;
-    private static Integer start;
-    private static Integer end;
+    public Event(String name) {
+        this.name = name;
+    }
 
-    public static String getName() {
+    public String getName() {
         return name;
     }
 
-    public static void setName(String name) {
-        Event.name = name;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Integer getSize() {
         return size;
     }
 
+    public void setSize(Integer size) {
+        this.size = size;
+    }
+
     public Integer getStart() {
         return start;
+    }
+
+    public void setStart(Integer start) {
+        this.start = start;
     }
 
     public Integer getEnd() {
         return end;
     }
 
-    public void setSize(Integer size) {
-        Event.size = size;
-    }
-
-    public void setStart(Integer start) {
-        Event.start = start;
-    }
-
     public void setEnd(Integer end) {
-        Event.end = end;
+        this.end = end;
     }
 
     public Event() {}
 
     public Event(String name, int size, int start, int end){
-        Event.name = name;
-        Event.size = size;
-        Event.start = start;
-        Event.end = end;
+        this.name = name;
+        this.size = size;
+        this.start = start;
+        this.end = end;
     }
 
+    @Override
+    public String toString() {
+        return "Event{" +
+                "name='" + name + '\'' +
+                ", size=" + size +
+                ", start=" + start +
+                ", end=" + end +
+                '}';
+    }
 }
