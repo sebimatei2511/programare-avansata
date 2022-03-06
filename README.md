@@ -1,4 +1,4 @@
-În temă, am implementat:
+În tema 1, am implementat:
 - o funcție checkNumber, care va verifica daca un input dat este de tip int.
 - o funcție checkChar, care va verifica dacă un input dat este de tip string.
 - o funcție addElement, care adaugă un element de tip string la un array, ambele date ca parametri.
