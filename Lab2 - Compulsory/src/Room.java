@@ -1,34 +1,39 @@
 public class Room {
 
-    private static String name;
-    private static Integer cap;
+    private String name;
+    private Integer cap;
+    private RoomType type;
 
-    public enum type {
-        lab,lectureHall;
-    }
-    private static type roomType;
-
-    public static String getName() {
+    public String getName() {
         return name;
     }
 
-    public static void setName(String name) {
-        Room.name = name;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public static Integer getCap() {
+    public Integer getCap() {
         return cap;
     }
 
-    public static void setCap(Integer cap) {
-        Room.cap = cap;
+    public void setCap(Integer cap) {
+        this.cap = cap;
     }
 
     public Room(){}
 
-    public Room(String name, int cap, type roomType){
-        Room.name = name;
-        Room.cap = cap;
-        Room.roomType = roomType;
+    public Room(String name, int cap, RoomType type){
+        this.name = name;
+        this.cap = cap;
+        this.type = type;
+    }
+
+    @Override
+    public String toString() {
+        return "Room{" +
+                "name='" + name + '\'' +
+                ", cap=" + cap +
+                ", " + type +
+                '}';
     }
 }
