@@ -1,7 +1,8 @@
+import java.lang.instrument.Instrumentation;
 import java.util.HashMap;
 import java.util.Map;
 
-public abstract class Node implements Identifiable, Storage, Comparable<Node>{
+public abstract class Node implements Comparable<Node>{
 
     public String name;
     private Map<Node, Integer> cost = new HashMap<>();
@@ -10,8 +11,8 @@ public abstract class Node implements Identifiable, Storage, Comparable<Node>{
         return cost;
     }
 
-    public void setCost(Map<Node, Integer> cost) {
-        this.cost = cost;
+    public void setCost(Node node, int value) {
+        cost.put(node, value);
     }
 
     public Node(String name) { this.name = name; }
@@ -19,15 +20,6 @@ public abstract class Node implements Identifiable, Storage, Comparable<Node>{
     public String getName() { return name; }
 
     public void setName(String name) { this.name = name; }
-
-    public void setCost(Node node, int value) {
-        cost.put(node, value);
-    }
-
-    @Override
-    public String toString() {
-        return super.toString();
-    }
 
     @Override
     public int compareTo(Node other) {
@@ -37,4 +29,14 @@ public abstract class Node implements Identifiable, Storage, Comparable<Node>{
             return 0;
 
     }
+
+    @Override
+    public String toString() {
+        return "Node{" +
+                "name='" + name + '\'' +
+                '}';
+    }
+
 }
+
+

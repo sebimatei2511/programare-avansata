@@ -1,5 +1,3 @@
-import java.util.Collections;
-
 public class Main {
     public static void main(String[] args){
         Node v1 = new Computer("Computer A");
@@ -18,11 +16,18 @@ public class Main {
         network.addNode(v5);
         network.addNode(v6);
 
-        Collections.sort(network.getNodesList());
+        v1.setCost(v2,10);
+        v1.setCost(v3,50);
+        v2.setCost(v3,20);
+        v2.setCost(v4,20);
+        v2.setCost(v5,10);
+        v3.setCost(v4,20);
+        v4.setCost(v5,30);
+        v4.setCost(v6,10);
+        v5.setCost(v6,20);
 
-        System.out.println("The nodes from the network are:");
-        for ( Node i : network.getNodesList())
-            System.out.println(i.getName().toString());
+        for(Node i : network.getNodesList())
+            System.out.println(i.getName()+": "+i.getCost().toString());
 
     }
 }

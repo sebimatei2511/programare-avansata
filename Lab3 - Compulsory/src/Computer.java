@@ -20,8 +20,4 @@ public class Computer extends Node implements Identifiable, Storage{
         return storageCapacity;
     }
 
-    @Override
-    public int compareTo(Node o) {
-        return this.getName().compareTo(o.getName());
-    }
 }
