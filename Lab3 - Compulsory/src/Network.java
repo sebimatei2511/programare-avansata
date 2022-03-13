@@ -3,7 +3,7 @@ import java.util.List;
 
 public class Network extends Node implements Identifiable, Storage {
 
-    List<Node> nodesList = new ArrayList<>();
+    private List<Node> nodesList = new ArrayList<>();
 
     public Network(String name) {
         super(name);
@@ -17,6 +17,9 @@ public class Network extends Node implements Identifiable, Storage {
         nodesList.add(node);
     }
 
+    public void deleteNode(Node node){ nodesList.remove(node); }
+
+
     @Override
     public String toString() {
         return "Network{ " +
@@ -24,4 +27,18 @@ public class Network extends Node implements Identifiable, Storage {
                 " }";
     }
 
+    @Override
+    public String getAddress() {
+        return null;
+    }
+
+    @Override
+    public int getStorageCapacity() {
+        return 0;
+    }
+
+    @Override
+    public int compareTo(Node o) {
+        return 0;
+    }
 }
