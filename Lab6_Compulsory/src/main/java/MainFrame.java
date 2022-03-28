@@ -8,14 +8,15 @@ public class MainFrame extends JFrame {
     DrawingPanel canvas;
 
     public MainFrame() {
-        super("My Drawing Application");
+        super("My Game");
         init();
     }
 
     private void init() {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-        //create the components
+        configPanel = new ConfigPanel(this);
+        controlPanel = new ControlPanel(this);
         canvas = new DrawingPanel(this);
  //...TODO
 

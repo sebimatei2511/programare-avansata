@@ -3,8 +3,6 @@ public class Main {
         MainFrame mainFrame = new MainFrame();
         mainFrame.setVisible(true);
 
-        ControlPanel controlPanel = new ControlPanel(mainFrame);
-
 
     }
 }
